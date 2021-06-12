@@ -65,7 +65,7 @@ class LabelEncoder(object):
         # xywh means [x_center, y_center, w, h]
         # tf.tensor.shape = ( n_objs, 4 )
         gt_boxes = convert_to_xywh(boxes)
-        return padded_img, gt_boxes, class_ids
+        return padded_img/255., gt_boxes, class_ids
 
     def _get_anchor_boxes(self, i, box_scaled):
         """i( 0,1,2 ) is an idex for a grid scale:"""
